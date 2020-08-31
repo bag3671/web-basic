@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <title>오류를 찾으세요</title>
+<style>
+    h3{text-align: center; color: darkred;}
+    span{color: violet; font-size: 20px;}
+    hr{height: 10px;border: solid grey;
+        background-color: grey;}
+</style>
+<script>
+    function show(){document.getElementById("fig").src = "ElvisPresley.png"}
+    function hide(){document.getElementById("fig").src = ""  }
+</script>
+</head>
+<body>
+<h3>Elvis Presley</h3>
+<hr>
+<p>He was an amerian singer and actoer.<br>
+    IN november 1956, he is often referred to as
+    "<span onmouseover="show()" onmouseout="hide()">the king of Rock and Roll
+    </span> </p>
+<div><img id="fig"; src="">
+</div>
+</body>
+</html>
