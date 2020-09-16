@@ -1,0 +1,26 @@
+body{
+    background-color: lavender;         /*배경색*/
+}
+h3{
+    color: brown;text-align: center;            /*제목*/
+    font-size: 40px;
+}
+p{
+    font-family: "휴먼편지체", "휴먼 편지체", sans-serif ;
+}
+hr{
+    border-bottom-width: 1px;
+    border-bottom-color: black;
+}
+form{
+    background-color: pink;          /*배경색이 핑크로 보여서 핑크로 설정*/
+    font-family : "휴먼편지체","휴먼 편지체", sans-serif; 
+}
+span{
+    color: blue;
+    font : bold 20px consolas, sans-serif; 
+}
+small{
+    background-color: orange;
+    border-radius : 20px;
+}
