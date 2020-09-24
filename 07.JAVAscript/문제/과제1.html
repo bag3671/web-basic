@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+    integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>Document</title>
+  <script>
+    let clickCount = 0;
+    let numbers = [];
+    let gameMoney = 10000;
+    let gameCount = 0;
+    function change(id) {
+      let button = document.getElementById(id);
+      let random = Math.floor(Math.random() * 3);
+      button.innerHTML = random;
+      clickCount++;
+      numbers.push(random);
+      if (clickCount === 3) {
+        setTimeout(function () {
+          playGame();
+        }, 1000);
+      }
+    }
+
+    function playGame() {
+      if (numbers[0] === numbers[1] && numbers[0] === numbers[2]){
+        gameMoney += 8000;
+      }
+      else{
+        gameMoney -= 1000;
+      }
+      if (gameMoney <= 0) {
+        alert('파산입니다');
+        gameMoney = 10000;
+        gameCount = 0;
+      } else {
+        gameCount++;
+      }
+
+      clickCount = 0;
+      numbers = [];
+
+      let moneyDOM = document.getElementById('money');
+      let countDOM = document.getElementById('count');
+      let oneDOM = document.getElementById('one');
+      let twoDOM = document.getElementById('two');
+      let threeDOM = document.getElementById('three');
+      moneyDOM.innerHTML = gameMoney;
+      countDOM.innerHTML = gameCount;
+      oneDOM.innerHTML = '?';
+      twoDOM.innerHTML = '?';
+      threeDOM.innerHTML = '?';
+    }
+
+
+  </script>
+</head>
+
+<body>
+  <h3 class = "">겜블링게임</h3>
+  <hr>
+  <p>
+    게임머니: <span id="money">10000</span>원
+    횟수: <span id="count">0</span>회
+  </p>
+  <table class="table display-2 ">
+    <tr><th>
+  <img id="one" onclick="change('one')" class="bg-warning rounded">
+    ?</button></th>
+  <th> <button id="two" onclick="change('two')"class="bg-warning">?</button></th>
+    <th><button id="three" onclick="change('three')"class="bg-warning">?</button></th>
+</tr>
+</table>
+</body>
+
+</html>

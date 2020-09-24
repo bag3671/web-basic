@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>문서 객체 복수 선택</title>
+  <script>
+    window.onload =
+      setTimeout(function () {
+
+        // 문서 객체 전부를 선택합니다.
+        let headers = document.querySelectorAll(`h1`);
+
+        //반복문으로 전체의 스타일을 변경
+        for (let header of headers) {
+          header.style.color = `red`;
+          header.style.backgroundColor = `aliceblue`;
+          
+          //h1의 내용을 자바로 바꿈
+          header.innerHTML = `Form Javascript`;
+        }
+      }, 3000);
+  </script>
+</head>
+
+<body>
+  <h1>Title</h1>
+  <h1>Title</h1>
+  <h1>Title</h1>
+</body>
+
+</html>

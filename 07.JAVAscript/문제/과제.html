@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>겜블링게임</title>
+  <script>
+    window.onload = function () {
+      let price = 10000;
+      let count = 0;
+      let clickCount = 0;
+      let id = document.getElementById(`id`)
+      id.innerHTML = '금액은  ' + price + '<br>' + '횟수는  ' + count
+      let button1 = document.getElementById(`button1`);
+      num1 = Math.floor(Math.random() * 3) 
+      button1.onclick = function btn1 () {
+        button1.innerHTML = num1;
+        clickCount +=1;
+      };
+      let button2 = document.getElementById(`button2`);
+      num2 = Math.floor(Math.random() * 3) 
+      button2.onclick = function btn2 () {
+        button2.innerHTML = num2;
+        clickCount +=1;
+      };
+      let button3 = document.getElementById(`button3`);
+      num3 = Math.floor(Math.random() * 3) 
+      button3.onclick = function btn3  () {
+        button3.innerHTML = num3;
+        clickCount +=1;
+        id.innerHTML = '금액은  ' + price + '<br>' + '횟수는  ' + count
+      };
+      if (num1 === num2) {
+        if (num3 === num2) {
+          count += 1
+          price += 10000
+        } else {
+          price -= 2000
+        }
+      }
+    }
+        if (clickCount === 3) {
+          btn1();
+          btn2();
+          btn3(); 
+        }
+
+
+  </script>
+</head>
+
+<body>
+
+
+
+  <h1>겜블링 게임</h1>
+  <hr>
+
+  <p id="id"></p>
+  <p>
+
+    <button id="button1">
+      <h3>?</h3>
+    </button>
+
+
+
+  <button id="button2">
+    <h3>?</h3>
+  </button>
+ 
+
+
+  <button id="button3">
+    <h3>?</h3>
+  </button>
+
+
+
+
+
+
+</body>
+
+</html>

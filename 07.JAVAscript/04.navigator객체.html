@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navigator 객체</title>
+  <script>
+    // Navigator 객체의 속성을 출력합니다.
+    let output = ``;
+    output +=`appCodeName: ` + navigator.appCodeName + `\n`;
+    output +=`appName: ` + navigator.appName + `\n`;
+    output +=`appVersion: ` + navigator.appVersion + `\n`;
+    output +=`platform: ` + navigator.platform + `\n`;
+    output +=`userAgent: ` + navigator.userAgent + `\n`;
+    alert(output);
+
+    if(navigator.userAgent.toLowerCase().indexOf(`chrome`) >= 0){
+      alert(`크롬브라우저`);
+    }
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
